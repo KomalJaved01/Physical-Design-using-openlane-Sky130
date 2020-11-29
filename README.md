@@ -140,7 +140,7 @@ The figure below shows results after placement
 ![](op11.png)
 
 # Day 3
-Day 3 is about cell design and characterization flow and how a cell is fabricated. We designed a custom cell (a CMOS inverter), extracted its spice netlist, created it lef file and included it in merged.lef file.
+Day 3 is about cell design and characterization flow and how a cell is fabricated. We designed a custom cell (a CMOS inverter), extracted its spice netlist and calculated its timing characteristics.
 ## Cell design Flow
 ### Required inputs
 To make a custom cell, we should have PDKs, DRC rules, LVS models, spice models, library and user defined specs. User defined specs include parameters such as cell height, width, voltage, noise to margin ratio, metal layers, gate length etc. It is the responsibility of library developer to fulfill these specs.
@@ -176,6 +176,17 @@ plot y vs time a
 Now we can calculate different characteristics such as I/O rise/fall transition time. To calculate rise time click on the point over the plot where voltage is 20 % of supply voltage and then click on the point where it is 80% of supply voltage. the difference between these two times is the output rise transition time which is 0.06 in our case. 
 
 ![](ngspice3.PNG)
+
+#Day 4
+In day 4, we extracted lef file for our custom cell and included the cell in merged.lef file. We also performed cts analysis and STA with ideal and real clocks.
+
+There are certain guidlines that must be followed while designing a standard cell:
+- IO ports must lie on intersection of tracks
+- Width of standard cell must be odd multiple of horizontal track pitch
+- Height of standard cell must be odd multiple of vertical track pitch
+
+To observe whether our design fulfills these guidlines open grid on magic.
+
 
 
 
