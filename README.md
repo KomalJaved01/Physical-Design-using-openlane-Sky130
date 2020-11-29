@@ -60,6 +60,103 @@ It is the ratio of width to height of cell. The width and g=height of vell are m
 Utilization defines how much area of the chip is occupied by the netlist. Normally the utilization is kept between 30 to 40% of total chip area to keep space for routing and clock tree buffers. Utilization factor is given as:
 Utilization factor = Area occupied by netlist/Total chip area
 
+![](op5.png)
+
+### Floor planning
+Floor panning is the step where we decide:
+-	Arrangement of pre placed cells and macros in the chip
+-	Location of IO pads
+-	No. of power pads
+-	Power distribution network
+
+The main objectives of floor planning are to minimize:
+- Chip area
+-	Delay
+-	Routing congestion
+
+Floor planning requires following parameters:
+-	Netlist
+-	Area requirements
+-	Power requirements
+-	Timing constraints
+-	Physical partitioning
+-	I/O and macro placement (optional)
+
+At the end of floor planning step we get:
+-	Die/block area
+-	IO pins placed
+-	Macros placed
+-	Power grid designed
+-	Standard cell placement areas
+
+### Pre placed cells
+Pre placed cells are the cells whose location is fixed on a chip and they cannot be moved around during placement. The floor planning tools decide the placement of standard cells keeping in consideration placement of macros. Macros can be used several times in a design. Typical examples of macros are memory blocks, clock gating cells, comparators etc.
+### Decoupling capacitors
+Decoupling capacitors are used in the design to compensate the voltage drop of long wires and nets as considerable voltage drop may cause the circuit to function abnormally. Macros in the chip are always surrounded by decoupling capacitors commonly referred to as decap cells. 
+### Power planning
+Power planning ensures continuous voltage and ground supply to all the cells in the circuit thus preventing voltage bounce and voltage droops. During floor planning, a grid of multiple Vdd and GND rails is laid down and each cell is given power from specific rail.
+
+![](op6.png)
+
+## Lab 2
+Lab 2 is about floor planning of the design synthesized in lab 1. We may control different parameters available in the file:
+```sh
+/openaneflow/configuration/Readme.md
+```
+To configure a certain parameter, type the following in command window:
+```sh
+set $env(parameter name) value
+```
+This will overwrite the value of that certain parameter already configured in either skr130 config file or design’s own config file. Fig below shows some of the configuration parmeters.
+
+![](op7.png)
+
+Tools available in openlane for floor planning are ioplacer, pdn and trapcell. To run floorplanning type the following command after design synthesis:
+```sh
+run_floorplan
+```
+
+![](op8.png)
+
+Once floorplanning is completed, we may use magic tool to analyze the plan. To invoke magic following command is used:
+```sh 
+magic -T <path to .tech file> read lef <path to .lef file> read def <path to .def file>
+```
+Below diagrams show the layout obtained after floorplanning. 
+
+![](op9.png)
+
+Zoomed in version of layout shows decap cells and pins orientation. On selecting a particular pin and typing 'what' in the tkcon window we may get info of that part of laout such as metal layer.
+
+![](op10.png)
+
+To run placement type the following command 
+```sh
+run_placement
+```
+
+The figure below shows results after placement 
+
+![](op11.png)
+
+# Day 3
+Day 3 is about cell design and characterization flow and how a cell is fabricated. We designed a custom cell (a CMOS inverter), extracted its spice netlist, created it lef file and included it in merged.lef file.
+## Cell design Flow
+### Required inputs
+To make a custom cell, we should have PDKs, DRC rules, LVS models, spice models, library and user defined specs. User defined specs include parameters such as cell height, width, voltage, noise to margin ratio, metal layers, gate length etc. It is the responsibility of library developer to fulfill these specs.
+### Design steps
+Once the specs are finalized, first step is to design the circuit on transistor level. After it, its layout is  designed making sure that its satisfies all design rules  and then its characterization is done.
+### Generated outputs
+-	Lef
+-	GDSII
+-	Timing, noise, power libs
+
+
+
+
+
+
+
 
 
 
