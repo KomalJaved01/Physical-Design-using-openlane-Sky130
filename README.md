@@ -189,6 +189,22 @@ To observe whether our design fulfills these guidlines open grid on magic.
 
 ![](2.PNG)
 
+To make lef file, tyoe following in tkcon window
+```sh 
+write lef
+```
+This will make a lef file with the same name as file name. Now we need to add one command in the design's config file:
+```sh
+ set ::env(EXTRA_LEFS) [glob $::env(OPENLANE_ROOT)/designs/$::env(DESIGN_NAME)/src/*.lef]
+ ```
+ We also need to include libraries with our own cell in the design config file
+ Run the design again from start so that it may take our designed cell during synthesis. To include lef file in the flow run following two commands after design prep.
+ ```sh
+  set lefs [glob $::env(DESIGN_DIR)/src/*.lef]
+  add_lefs -src $lefs
+  ```
+  
+
 
 
 
