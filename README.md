@@ -204,8 +204,21 @@ This will make a lef file with the same name as file name. Now we need to add on
   add_lefs -src $lefs
   ```
   
+## CTS
+Clcok tree synthesis is done to ensure all flops get the clock at the same time. For this purpose repeaters are added in the clock path at suitable locations. In Openlane CTS is done through Triton CTS. To run CTS type the following command in interactive shell.
+```sh
+run_cts
+```
 
 
+# Day 5
+Day 5 was about global and detailed routing, post routing timing analysis and routing algorithms.
+
+## Routing
+Routing is the process of connecting cells by actual nets while taking care of design rule such as wire width, wire spacing, wire pitch. Openlane uses Triton Route
+to perform routing.
+
+## Lab 5
 
 
 
