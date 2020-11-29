@@ -151,6 +151,21 @@ Once the specs are finalized, first step is to design the circuit on transistor 
 -	GDSII
 -	Timing, noise, power libs
 
+## Lab 3
+In lab 3 we created layout of CMOS inverter in magic and then created its ngspice file.
+
+![](op12.png)
+
+Type the following commands in tkcon window to extract ngspice file.
+
+![](op13.png)
+
+![](ngspice1.png)
+
+![](ngspice2.png)
+
+![](ngspice3.png)
+
 
 
 
