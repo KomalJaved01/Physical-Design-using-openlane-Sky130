@@ -160,11 +160,22 @@ Type the following commands in tkcon window to extract ngspice file.
 
 ![](op13.png)
 
-![](ngspice1.png)
+Once we have created ngspice file, we gave gate, drain and gnd voltage and connected them to appropriate positions in .spice file. Type the following command to invoke ngspice:
+```sh
+ngspice <.spice file name>
+```
 
-![](ngspice2.png)
+![](ngspice1.PNG)
 
-![](ngspice3.png)
+Next step is to see voltage variation with respect to time. To open plot type:
+```sh
+plot y vs time a
+```
+![](ngspice2.PNG)
+
+Now we can calculate different characteristics such as I/O rise/fall transition time. To calculate rise time click on the point over the plot where voltage is 20 % of supply voltage and then click on the point where it is 80% of supply voltage. the difference between these two times is the output rise transition time which is 0.06 in our case. 
+
+![](ngspice3.PNG)
 
 
 
