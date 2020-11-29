@@ -187,6 +187,9 @@ There are certain guidlines that must be followed while designing a standard cel
 
 To observe whether our design fulfills these guidlines open grid on magic.
 
+![](2.PNG)
+
+
 
 
 
