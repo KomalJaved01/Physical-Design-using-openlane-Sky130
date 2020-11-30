@@ -1,4 +1,4 @@
-# Physical-Design-using-openlane-Sky130
+# Advanced Physical Design using OpenLane Sky130 Workshop
 
 # Introduction
 This workshop is about complete RTL to GDSII flow of picorv32a design using open source tools provided by OpenLane and Sky130A PDK.  Following are the main objectives of this workshop:
