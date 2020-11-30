@@ -177,7 +177,7 @@ Now we can calculate different characteristics such as I/O rise/fall transition 
 
 ![](ngspice3.PNG)
 
-#Day 4
+# Day 4
 In day 4, we extracted lef file for our custom cell and included the cell in merged.lef file. We also performed cts analysis and STA with ideal and real clocks.
 
 There are certain guidlines that must be followed while designing a standard cell:
@@ -291,6 +291,42 @@ Routing is the process of connecting cells by actual nets while taking care of d
 to perform routing.
 
 ## Lab 5
+
+### PDN generation
+In the next step, we created power distribution network using following command
+```sh 
+gen_pdn
+```
+![](sta17.png)
+
+### Routing
+Next step is to route all the nets. Following command is used for routing
+```sh
+run_routing
+```
+The routing results are shown as follows:
+
+![](route.png)
+
+In the final step we generated SPEF file. Spec extractor is not part of openlane flow. The diagram below shows final layout of the chip in KLayout
+
+![](def.png)
+
+![](def1.png)
+
+Below diagrams show GDS layout of chip.
+
+![](gds2.png)
+
+![](gds.png)
+
+# ACKNOWLEDGEMENTS
+
+- Kunal Ghosh, Co-Founder (VSD Corp. Pvt. Ltd)
+- Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
+
+
+
 
 
 
