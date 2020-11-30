@@ -191,7 +191,7 @@ To observe whether our design fulfills these guidlines open grid on magic by ass
 
 This will create grid as shown in figure below. The diagram shows that our standard cell width satisfies required guidlines:
 
-![](ngspice1.PNG)
+![](ngspice.PNG)
 
 
 To make lef file, tyoe following in tkcon window
