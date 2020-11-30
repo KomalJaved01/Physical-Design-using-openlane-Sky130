@@ -185,9 +185,14 @@ There are certain guidlines that must be followed while designing a standard cel
 - Width of standard cell must be odd multiple of horizontal track pitch
 - Height of standard cell must be odd multiple of vertical track pitch
 
-To observe whether our design fulfills these guidlines open grid on magic.
+To observe whether our design fulfills these guidlines open grid on magic by assigning parameters from track.info file as shown below
 
-![](2.PNG)
+![](track.PNG)
+
+This will create grid as shown in figure below. The diagram shows that our standard cell width satisfies required guidlines:
+
+![](ngspice1.PNG)
+
 
 To make lef file, tyoe following in tkcon window
 ```sh 
