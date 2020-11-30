@@ -165,7 +165,7 @@ Once we have created ngspice file, we gave gate, drain and gnd voltage and conne
 ngspice <.spice file name>
 ```
 
-![](ngspice1.PNG)
+![](ngspice.PNG)
 
 Next step is to see voltage variation with respect to time. To open plot type:
 ```sh
@@ -191,7 +191,7 @@ To observe whether our design fulfills these guidlines open grid on magic by ass
 
 This will create grid as shown in figure below. The diagram shows that our standard cell width satisfies required guidlines:
 
-![](ngspice.PNG)
+![](ngspice1.PNG)
 
 
 To make lef file, tyoe following in tkcon window
