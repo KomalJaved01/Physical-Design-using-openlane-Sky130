@@ -321,6 +321,8 @@ Below diagrams show GDS layout of chip.
 
 - Kunal Ghosh, Co-Founder (VSD Corp. Pvt. Ltd)
 - Nickson P Jose, Teaching Assistant (VSD Corp. Pvt. Ltd)
+- Tim Edwards, Open Source Developer and Technical Staff (MultiGiG, Inc)
+- Mohamed Shalan, Associate Professor (American University, Cairo)
 - Haseeb Ahmad, Associate Design Engineer (LM IT Solutions Ltd)
 
 
