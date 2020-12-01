@@ -196,7 +196,7 @@ This will create grid as shown in figure below. The diagram shows that our stand
 
 To make lef file, type following in tkcon window
 ```sh 
-write lef
+lef write
 ```
 This makes a lef file with the same name as file name. Now we add following command in the design's config.tcl file:
 ```sh
